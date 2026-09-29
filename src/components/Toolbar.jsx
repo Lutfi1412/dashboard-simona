@@ -66,7 +66,7 @@ export default function Toolbar({
           ["all", "Semua status"],
           ["online", "Online"],
           ["warning", "Warning"],
-          ["disconnect", "Disconnect"],
+          ["offline", "offline"],
         ]}
       />
       <button

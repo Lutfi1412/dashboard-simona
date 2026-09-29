@@ -1,6 +1,5 @@
 {
-  "ping": [
-    {
+  "ping": [{
       "id": 1,
       "name": "Gateway Utama",
       "host": "smtp.gmail.com:587",
@@ -31,7 +30,7 @@
       "id": 4,
       "name": "VPN Gateway",
       "host": "10.0.4.1",
-      "status": "disconnect",
+      "status": "offline",
       "lastOnline": "2026-09-28T16:00:00+07:00",
       "lastCheck": "2026-09-29T09:30:00+07:00"
     },
@@ -81,8 +80,7 @@
       "latency": 66.28
     }
   ],
-  "server": [
-    {
+  "server": [{
       "id": 10,
       "name": "SMTP Gmail",
       "host": "srv-10.kemenkeu.local:22",
@@ -131,7 +129,7 @@
       "id": 15,
       "name": "Auth Service",
       "host": "srv-15.kemenkeu.local:22",
-      "status": "disconnect",
+      "status": "offline",
       "lastOnline": "2026-09-29T01:57:00+07:00",
       "lastCheck": "2026-09-29T09:30:00+07:00"
     },
@@ -154,8 +152,7 @@
       "latency": 19.05
     }
   ],
-  "website": [
-    {
+  "website": [{
       "id": 18,
       "name": "Portal Utama",
       "host": "app18.kemenkeu.go.id:443",
@@ -195,7 +192,7 @@
       "id": 22,
       "name": "Landing Page",
       "host": "app22.kemenkeu.go.id:443",
-      "status": "disconnect",
+      "status": "offline",
       "lastOnline": "2026-09-29T05:05:00+07:00",
       "lastCheck": "2026-09-29T09:30:00+07:00"
     },

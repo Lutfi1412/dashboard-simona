@@ -12,7 +12,7 @@ export default function LatencyChart({ servers }) {
   // Hanya server online & warning,
   // urut dari latensi terbesar
   const top = servers
-    .filter((s) => s.status !== "disconnect")
+    .filter((s) => s.status !== "offline")
     .sort((a, b) => b.latency - a.latency)
     .slice(0, 5)
     .map((s) => ({

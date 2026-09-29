@@ -11,11 +11,11 @@ const mapAll = (d, fn) =>
 
 const init = (d) => {
   const now = Date.now();
-  return mapAll(d, (s) => (s.status === "disconnect" ? { ...s, lastCheck: now } : { ...s, lastOnline: now }));
+  return mapAll(d, (s) => (s.status === "offline" ? { ...s, lastCheck: now } : { ...s, lastOnline: now }));
 };
 
 const step = (s, now) => {
-  if (s.status === "disconnect") return { ...s, lastCheck: now };
+  if (s.status === "offline") return { ...s, lastCheck: now };
   let latency = s.latency + INTERVAL; // +1 ms per detik x 5 detik
   if (latency > MAX_MS) latency = rand(15, 90);
   return { ...s, latency: +latency.toFixed(2), status: latency >= WARN_MS ? "warning" : "online", lastOnline: now };
