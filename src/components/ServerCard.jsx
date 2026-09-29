@@ -1,4 +1,4 @@
-import { STATUS, ago, fmtDate } from "../utils/helpers";
+import { STATUS, ago, fmtDate, duration } from "../utils/helpers";
 
 export default function ServerCard({ s, now }) {
   const c = STATUS[s.status];
@@ -23,6 +23,7 @@ export default function ServerCard({ s, now }) {
       </div>
       <div className="mt-4 space-y-0.5 text-sm opacity-90">
         <div>Last online : {ago(s.lastOnline, now)}</div>
+
         {off ? (
           <div>Last check : {ago(s.lastCheck, now)}</div>
         ) : (
@@ -30,9 +31,10 @@ export default function ServerCard({ s, now }) {
             <div>
               Last offline :{" "}
               {s.lastOffline
-                ? `${fmtDate(s.lastOffline)} (${ago(s.lastOffline, now)})`
+                ? `${fmtDate(s.lastOffline)} (${duration(s.lastOffline, now)})`
                 : "Never"}
             </div>
+
             <div>Latency : {s.latency.toFixed(2)} ms</div>
           </>
         )}

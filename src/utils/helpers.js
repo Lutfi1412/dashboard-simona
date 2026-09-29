@@ -4,14 +4,46 @@ export const ts = (x) => new Date(x).getTime();
 
 export const ago = (x, now) => {
   const s = Math.max(0, Math.floor((now - ts(x)) / 1000));
+
   if (s < 60) return `${s}s ago`;
   if (s < 3600) return `${Math.floor(s / 60)}m ago`;
   if (s < 86400) return `${Math.floor(s / 3600)}h ago`;
+
   return `${Math.floor(s / 86400)}d ago`;
 };
 
+export const duration = (x, now) => {
+  const totalSeconds = Math.max(
+    0,
+    Math.floor((now - ts(x)) / 1000)
+  );
+
+  const hours = Math.floor(totalSeconds / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+
+  const parts = [];
+
+  if (hours > 0) {
+    parts.push(`${hours} ${hours === 1 ? "hour" : "hours"}`);
+  }
+
+  if (minutes > 0) {
+    parts.push(`${minutes} ${minutes === 1 ? "minute" : "minutes"}`);
+  }
+
+  if (seconds > 0 || parts.length === 0) {
+    parts.push(`${seconds} ${seconds === 1 ? "second" : "seconds"}`);
+  }
+
+  return parts.join(" ");
+};
+
 export const fmtDate = (x) =>
-  new Date(x).toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" });
+  new Date(x).toLocaleDateString("en-US", {
+    month: "long",
+    day: "numeric",
+  });
 
 // Warna & label tiap status. Ubah di sini kalau mau ganti tema.
 export const STATUS = {
