@@ -1,0 +1,230 @@
+{
+  "ping": [
+    {
+      "id": 1,
+      "name": "Gateway Utama",
+      "host": "smtp.gmail.com:587",
+      "status": "online",
+      "lastOnline": "2026-09-29T09:30:00+07:00",
+      "lastOffline": "2026-06-02T16:30:00+07:00",
+      "latency": 83.12
+    },
+    {
+      "id": 2,
+      "name": "Router Core",
+      "host": "10.0.2.1",
+      "status": "warning",
+      "lastOnline": "2026-09-29T09:30:00+07:00",
+      "lastOffline": "2026-05-29T19:30:00+07:00",
+      "latency": 158.01
+    },
+    {
+      "id": 3,
+      "name": "DNS Internal",
+      "host": "10.0.3.1",
+      "status": "online",
+      "lastOnline": "2026-09-29T09:30:00+07:00",
+      "lastOffline": "2026-04-29T03:30:00+07:00",
+      "latency": 27.33
+    },
+    {
+      "id": 4,
+      "name": "VPN Gateway",
+      "host": "10.0.4.1",
+      "status": "disconnect",
+      "lastOnline": "2026-09-28T16:00:00+07:00",
+      "lastCheck": "2026-09-29T09:30:00+07:00"
+    },
+    {
+      "id": 5,
+      "name": "Switch Lantai 3",
+      "host": "10.0.5.1",
+      "status": "online",
+      "lastOnline": "2026-09-29T09:30:00+07:00",
+      "lastOffline": "2026-04-17T14:30:00+07:00",
+      "latency": 77.82
+    },
+    {
+      "id": 6,
+      "name": "Firewall Edge",
+      "host": "10.0.6.1",
+      "status": "online",
+      "lastOnline": "2026-09-29T09:30:00+07:00",
+      "lastOffline": "2026-09-01T19:30:00+07:00",
+      "latency": 37.18
+    },
+    {
+      "id": 7,
+      "name": "NTP Server",
+      "host": "10.0.7.1",
+      "status": "warning",
+      "lastOnline": "2026-09-29T09:30:00+07:00",
+      "lastOffline": "2026-09-02T16:30:00+07:00",
+      "latency": 177.63
+    },
+    {
+      "id": 8,
+      "name": "Proxy Node",
+      "host": "10.0.8.1",
+      "status": "online",
+      "lastOnline": "2026-09-29T09:30:00+07:00",
+      "lastOffline": "2026-04-17T08:30:00+07:00",
+      "latency": 61.42
+    },
+    {
+      "id": 9,
+      "name": "Load Balancer",
+      "host": "10.0.9.1",
+      "status": "online",
+      "lastOnline": "2026-09-29T09:30:00+07:00",
+      "lastOffline": "2026-06-16T19:30:00+07:00",
+      "latency": 66.28
+    }
+  ],
+  "server": [
+    {
+      "id": 10,
+      "name": "SMTP Gmail",
+      "host": "srv-10.kemenkeu.local:22",
+      "status": "online",
+      "lastOnline": "2026-09-29T09:30:00+07:00",
+      "lastOffline": "2026-04-21T13:30:00+07:00",
+      "latency": 25.07
+    },
+    {
+      "id": 11,
+      "name": "DB Primary",
+      "host": "srv-11.kemenkeu.local:22",
+      "status": "online",
+      "lastOnline": "2026-09-29T09:30:00+07:00",
+      "lastOffline": "2026-09-22T17:30:00+07:00",
+      "latency": 17.24
+    },
+    {
+      "id": 12,
+      "name": "DB Replica",
+      "host": "srv-12.kemenkeu.local:22",
+      "status": "warning",
+      "lastOnline": "2026-09-29T09:30:00+07:00",
+      "lastOffline": "2026-09-17T03:30:00+07:00",
+      "latency": 182.17
+    },
+    {
+      "id": 13,
+      "name": "Redis Cache",
+      "host": "srv-13.kemenkeu.local:22",
+      "status": "online",
+      "lastOnline": "2026-09-29T09:30:00+07:00",
+      "lastOffline": "2026-04-26T09:30:00+07:00",
+      "latency": 76.58
+    },
+    {
+      "id": 14,
+      "name": "File Storage",
+      "host": "srv-14.kemenkeu.local:22",
+      "status": "online",
+      "lastOnline": "2026-09-29T09:30:00+07:00",
+      "lastOffline": "2026-07-04T19:30:00+07:00",
+      "latency": 61.05
+    },
+    {
+      "id": 15,
+      "name": "Auth Service",
+      "host": "srv-15.kemenkeu.local:22",
+      "status": "disconnect",
+      "lastOnline": "2026-09-29T01:57:00+07:00",
+      "lastCheck": "2026-09-29T09:30:00+07:00"
+    },
+    {
+      "id": 16,
+      "name": "Queue Worker",
+      "host": "srv-16.kemenkeu.local:22",
+      "status": "online",
+      "lastOnline": "2026-09-29T09:30:00+07:00",
+      "lastOffline": "2026-07-28T13:30:00+07:00",
+      "latency": 36.41
+    },
+    {
+      "id": 17,
+      "name": "Backup Node",
+      "host": "srv-17.kemenkeu.local:22",
+      "status": "online",
+      "lastOnline": "2026-09-29T09:30:00+07:00",
+      "lastOffline": "2026-09-24T12:30:00+07:00",
+      "latency": 19.05
+    }
+  ],
+  "website": [
+    {
+      "id": 18,
+      "name": "Portal Utama",
+      "host": "app18.kemenkeu.go.id:443",
+      "status": "online",
+      "lastOnline": "2026-09-29T09:30:00+07:00",
+      "lastOffline": "2026-04-12T01:30:00+07:00",
+      "latency": 45.76
+    },
+    {
+      "id": 19,
+      "name": "Dashboard Admin",
+      "host": "app19.kemenkeu.go.id:443",
+      "status": "warning",
+      "lastOnline": "2026-09-29T09:30:00+07:00",
+      "lastOffline": "2026-05-08T07:30:00+07:00",
+      "latency": 171.01
+    },
+    {
+      "id": 20,
+      "name": "API Gateway",
+      "host": "app20.kemenkeu.go.id:443",
+      "status": "online",
+      "lastOnline": "2026-09-29T09:30:00+07:00",
+      "lastOffline": "2026-07-08T02:30:00+07:00",
+      "latency": 54.57
+    },
+    {
+      "id": 21,
+      "name": "Docs Site",
+      "host": "app21.kemenkeu.go.id:443",
+      "status": "online",
+      "lastOnline": "2026-09-29T09:30:00+07:00",
+      "lastOffline": "2026-09-19T07:30:00+07:00",
+      "latency": 58.74
+    },
+    {
+      "id": 22,
+      "name": "Landing Page",
+      "host": "app22.kemenkeu.go.id:443",
+      "status": "disconnect",
+      "lastOnline": "2026-09-29T05:05:00+07:00",
+      "lastCheck": "2026-09-29T09:30:00+07:00"
+    },
+    {
+      "id": 23,
+      "name": "E-Office",
+      "host": "app23.kemenkeu.go.id:443",
+      "status": "online",
+      "lastOnline": "2026-09-29T09:30:00+07:00",
+      "lastOffline": "2026-08-30T00:30:00+07:00",
+      "latency": 44.08
+    },
+    {
+      "id": 24,
+      "name": "SSO Login",
+      "host": "app24.kemenkeu.go.id:443",
+      "status": "online",
+      "lastOnline": "2026-09-29T09:30:00+07:00",
+      "lastOffline": "2026-09-21T12:30:00+07:00",
+      "latency": 12.05
+    },
+    {
+      "id": 25,
+      "name": "Status Page",
+      "host": "app25.kemenkeu.go.id:443",
+      "status": "online",
+      "lastOnline": "2026-09-29T09:30:00+07:00",
+      "lastOffline": "2026-08-04T08:30:00+07:00",
+      "latency": 51.01
+    }
+  ]
+}
