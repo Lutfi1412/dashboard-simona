@@ -17,5 +17,5 @@ export const fmtDate = (x) =>
 export const STATUS = {
   online: { badge: "Connect", dot: "bg-emerald-500", pill: "bg-white/90 text-emerald-700", card: "from-emerald-500 to-emerald-600 text-white shadow-emerald-600/25" },
   warning: { badge: "Warning", dot: "bg-amber-400", pill: "bg-white/80 text-amber-700", card: "from-amber-300 to-amber-400 text-amber-950 shadow-amber-500/25" },
-  offline: { badge: "offline", dot: "bg-rose-500", pill: "bg-white/90 text-rose-700", card: "from-rose-500 to-red-600 text-white shadow-red-600/25" },
+  offline: { badge: "Offline", dot: "bg-rose-500", pill: "bg-white/90 text-rose-700", card: "from-rose-500 to-red-600 text-white shadow-red-600/25" },
 };
