@@ -6,17 +6,27 @@ const ITEMS = [
 ];
 
 export default function StatCards({ servers, active, onPick }) {
-  const count = (k) =>
-    k === "all" ? servers.length : servers.filter((s) => s.status === k).length;
+  const count = (status) => {
+    if (status === "all") {
+      return servers.length;
+    }
+
+    return servers.filter((s) => s.status === status).length;
+  };
+
   return (
-    <div className="grid grid-cols-2 gap-4 lg:grid-cols-4 hidden md:grid">
-      {ITEMS.map(([k, label, color]) => (
+    <div className="hidden grid-cols-2 gap-4 md:grid lg:grid-cols-4">
+      {ITEMS.map(([key, label, color]) => (
         <div
-          className={`rounded-2xl border bg-white p-5 text-center shadow-sm transition ${onPick ? "hover:-translate-y-0.5 hover:shadow-md" : "cursor-default"} border-slate-300 ring-2 ring-slate-200`}
+          key={key}
+          className={`rounded-2xl border border-slate-300 bg-white p-5 text-center shadow-sm transition ${
+            onPick ? "hover:-translate-y-0.5 hover:shadow-md" : "cursor-default"
+          }`}
         >
           <div className={`text-4xl font-bold tabular-nums ${color}`}>
-            {count(k)}
+            {count(key)}
           </div>
+
           <div className="mt-1 text-sm text-slate-500">{label}</div>
         </div>
       ))}

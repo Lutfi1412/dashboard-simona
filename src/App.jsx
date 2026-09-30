@@ -12,23 +12,34 @@ import { TYPES } from "./utils/helpers";
 
 export default function App() {
   const { data, now, addServer } = useRealtime();
+
   const [search, setSearch] = useState("");
   const [type, setType] = useState("all");
   const [status, setStatus] = useState("all");
   const [view, setView] = useState("card");
   const [chart, setChart] = useState(false);
-  const [tools, setTools] = useState(true); // dropdown di samping judul "Status"
+  const [tools, setTools] = useState(true);
   const [modal, setModal] = useState(false);
 
-  // Saat fitur disembunyikan, nilai efektifnya kembali default (pilihan tetap tersimpan)
+  // Saat tools disembunyikan, filter kembali ke default
   const eType = tools ? type : "all";
   const eStatus = tools ? status : "all";
   const eView = tools ? view : "card";
 
+  // Semua server
   const all = useMemo(
-    () => TYPES.flatMap((t) => data[t].map((s) => ({ ...s, type: t }))),
+    () =>
+      TYPES.flatMap((t) =>
+        data[t].map((s) => ({
+          ...s,
+          type: t,
+        })),
+      ),
     [data],
   );
+
+  // Semua filter aktif diterapkan di sini:
+  // search + type + status
   const shown = all.filter(
     (s) =>
       (eType === "all" || s.type === eType) &&
@@ -39,8 +50,10 @@ export default function App() {
   return (
     <Layout search={search} onSearch={setSearch}>
       <div className="mx-auto max-w-7xl space-y-6">
+        {/* Header */}
         <div className="flex items-center gap-2">
           <h1 className="text-3xl font-bold tracking-tight">Status</h1>
+
           <button
             onClick={() => setTools(!tools)}
             title="Tampilkan/sembunyikan fitur"
@@ -70,20 +83,23 @@ export default function App() {
             />
 
             <StatCards
-              servers={all}
+              servers={shown}
               active={eStatus}
               onPick={tools ? setStatus : undefined}
             />
           </>
         )}
 
-        {tools && chart && <LatencyChart servers={all} />}
+        {/* Chart */}
+        {tools && chart && <LatencyChart servers={shown} />}
 
+        {/* Server List */}
         {eView === "table" ? (
           <ServerTable rows={shown} now={now} />
         ) : (
           TYPES.map((t) => {
             const list = shown.filter((s) => s.type === t);
+
             return list.length ? (
               <section key={t}>
                 <h2 className="mb-3 text-xl font-semibold capitalize">
@@ -92,6 +108,7 @@ export default function App() {
                     {list.length}
                   </span>
                 </h2>
+
                 <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
                   {list.map((s) => (
                     <ServerCard key={s.id} s={s} now={now} />
@@ -101,12 +118,15 @@ export default function App() {
             ) : null;
           })
         )}
+
+        {/* Empty state */}
         {eView === "card" && !shown.length && (
           <p className="py-16 text-center text-slate-400">
             Server tidak ditemukan. Coba ubah kata kunci atau filter.
           </p>
         )}
       </div>
+
       <AddServerModal
         open={modal}
         onClose={() => setModal(false)}

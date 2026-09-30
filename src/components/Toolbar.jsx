@@ -72,7 +72,7 @@ export default function Toolbar({
             ["all", "Semua status"],
             ["online", "Online"],
             ["warning", "Warning"],
-            ["Offline", "Offline"],
+            ["offline", "Offline"],
           ]}
         />
       </div>
