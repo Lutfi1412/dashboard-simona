@@ -15,14 +15,19 @@ export const ago = (x, now) => {
 export const duration = (x, now) => {
   const totalSeconds = Math.max(
     0,
-    Math.floor((now - ts(x)) / 1000)
+    Math.floor((now - ts(x)) / 1000),
   );
 
-  const hours = Math.floor(totalSeconds / 3600);
+  const days = Math.floor(totalSeconds / 86400);
+  const hours = Math.floor((totalSeconds % 86400) / 3600);
   const minutes = Math.floor((totalSeconds % 3600) / 60);
   const seconds = totalSeconds % 60;
 
   const parts = [];
+
+  if (days > 0) {
+    parts.push(`${days} ${days === 1 ? "day" : "days"}`);
+  }
 
   if (hours > 0) {
     parts.push(`${hours} ${hours === 1 ? "hour" : "hours"}`);
