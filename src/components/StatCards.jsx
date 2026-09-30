@@ -9,7 +9,7 @@ export default function StatCards({ servers, active, onPick }) {
   const count = (k) =>
     k === "all" ? servers.length : servers.filter((s) => s.status === k).length;
   return (
-    <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+    <div className="grid grid-cols-2 gap-4 lg:grid-cols-4 hidden md:grid">
       {ITEMS.map(([k, label, color]) => (
         <div
           className={`rounded-2xl border bg-white p-5 text-center shadow-sm transition ${onPick ? "hover:-translate-y-0.5 hover:shadow-md" : "cursor-default"} border-slate-300 ring-2 ring-slate-200`}

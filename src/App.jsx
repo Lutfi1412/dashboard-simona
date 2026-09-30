@@ -65,6 +65,8 @@ export default function App() {
               view={view}
               setView={setView}
               onAdd={() => setModal(true)}
+              search={search}
+              onSearch={setSearch}
             />
 
             <StatCards
