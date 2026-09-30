@@ -93,7 +93,7 @@ export default function LatencyChart({ servers }) {
                 interval={0}
                 padding={{
                   left: 15,
-                  right: 10,
+                  right: 50,
                 }}
                 tick={<CustomXAxisTick />}
                 tickLine={false}
