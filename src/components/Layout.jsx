@@ -22,11 +22,16 @@ export default function Layout({ search, onSearch, children }) {
     <div className="min-h-screen bg-slate-50 text-slate-800 pb-16 md:pb-0">
       {/* HEADER */}
       <header className="sticky top-0 z-30 hidden items-center gap-4 border-b border-slate-200/70 bg-white/80 px-4 py-3 backdrop-blur md:flex md:px-6">
-        <div className="flex w-auto items-center gap-2 font-semibold md:w-44 hidden md:flex">
-          <span className="grid size-8 shrink-0 place-items-center rounded-xl bg-emerald-500 text-white">
+        <div className="flex w-auto items-center gap-2 font-semibold hidden md:flex mr-3">
+          {/* <span className="grid size-8 shrink-0 place-items-center rounded-xl bg-emerald-500 text-white">
             <Server size={16} />
-          </span>
-
+           
+          </span> */}
+          <img
+            src="/logo.png"
+            alt="logo"
+            className="grid size-10 shrink-0 place-items-center "
+          />
           <span>Server Monitor</span>
         </div>
 
